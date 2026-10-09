@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Responsive user registration form with validation" />
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <main class="page-shell">
+      <section class="form-card" aria-labelledby="form-title">
+        <header class="card-header">
+          <h1 id="form-title">Create Your Account</h1>
+          <p>Join our platform by filling out the form below.</p>
+        </header>
+
+        <form id="registrationForm" novalidate>
+          <div class="form-grid">
+            <div class="field-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" />
+              <div class="error" id="fullNameError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" />
+              <div class="error" id="emailError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="mobile">Mobile Number <span class="required">*</span></label>
+              <input type="tel" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number" />
+              <div class="error" id="mobileError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="password">Password <span class="required">*</span></label>
+              <div class="password-wrapper">
+                <input type="password" id="password" name="password" placeholder="Create a strong password" />
+                <button type="button" class="toggle-password" data-target="password">Show</button>
+              </div>
+              <div class="strength-meter" aria-hidden="true">
+                <div class="strength-bar" id="strengthBar"></div>
+              </div>
+              <div class="strength-text" id="strengthText"></div>
+              <div class="error" id="passwordError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+              <div class="password-wrapper">
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" />
+                <button type="button" class="toggle-password" data-target="confirmPassword">Show</button>
+              </div>
+              <div class="error" id="confirmPasswordError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="dob">Date of Birth <span class="required">*</span></label>
+              <input type="date" id="dob" name="dob" />
+              <div class="error" id="dobError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="gender">Gender <span class="required">*</span></label>
+              <select id="gender" name="gender">
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="error" id="genderError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group full-width">
+              <label for="address">Address <span class="required">*</span></label>
+              <textarea id="address" name="address" rows="3" placeholder="Enter your full address"></textarea>
+              <div class="error" id="addressError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="city">City <span class="required">*</span></label>
+              <input type="text" id="city" name="city" placeholder="Enter city name" />
+              <div class="error" id="cityError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="state">State <span class="required">*</span></label>
+              <input type="text" id="state" name="state" placeholder="Enter state name" />
+              <div class="error" id="stateError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="pinCode">PIN Code <span class="required">*</span></label>
+              <input type="text" id="pinCode" name="pinCode" placeholder="Enter 6-digit PIN" />
+              <div class="error" id="pinCodeError" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="country">Country <span class="required">*</span></label>
+              <select id="country" name="country">
+                <option value="">Select country</option>
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Australia">Australia</option>
+                <option value="Germany">Germany</option>
+                <option value="Japan">Japan</option>
+                <option value="Singapore">Singapore</option>
+              </select>
+              <div class="error" id="countryError" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="terms-row">
+            <input type="checkbox" id="terms" name="terms" />
+            <label for="terms">I accept the terms and conditions <span class="required">*</span></label>
+          </div>
+          <div class="error" id="termsError" aria-live="polite"></div>
+
+          <button type="submit" class="submit-btn">Register Now</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="modal-overlay" id="successModal" aria-hidden="true">
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h2 id="modalTitle">Registration Successful!</h2>
+        <p>Your account has been created successfully.</p>
+        <button type="button" id="closeModalBtn">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
